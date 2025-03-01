@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
-import { Mic, MicOff, Volume2 } from 'lucide-react';
+import { Mic, MicOff, Volume2, MapPin } from 'lucide-react';
 import { restaurants, Restaurant, MenuItem } from '../data/restaurants';
+import { useUserLocation } from '../context/UserLocationContext';
 
 const VoiceAssistant: React.FC = () => {
   const [isListening, setIsListening] = useState(false);
@@ -9,6 +11,7 @@ const VoiceAssistant: React.FC = () => {
   const [suggestions, setSuggestions] = useState<MenuItem[]>([]);
   const [selectedRestaurant, setSelectedRestaurant] = useState<Restaurant | null>(null);
   const [speaking, setSpeaking] = useState(false);
+  const { userLocation, isLoading: locationLoading, error: locationError, requestLocationPermission } = useUserLocation();
 
   const {
     transcript,
@@ -22,6 +25,23 @@ const VoiceAssistant: React.FC = () => {
       processCommand(transcript);
     }
   }, [transcript]);
+
+  useEffect(() => {
+    // If user location is available, sort restaurants by actual distance
+    if (userLocation && !selectedRestaurant) {
+      const sortedRestaurants = [...restaurants].sort((a, b) => {
+        const distA = parseFloat(a.distance.split(' ')[0]);
+        const distB = parseFloat(b.distance.split(' ')[0]);
+        return distA - distB;
+      });
+      
+      // Show nearest restaurant's top items by default
+      if (sortedRestaurants.length > 0) {
+        handleRestaurantRequest(sortedRestaurants[0]);
+        setMessage(`Based on your location, here are the top items from ${sortedRestaurants[0].name}, which is ${sortedRestaurants[0].distance} away:`);
+      }
+    }
+  }, [userLocation]);
 
   const toggleListening = () => {
     if (isListening) {
@@ -155,6 +175,36 @@ const VoiceAssistant: React.FC = () => {
         </div>
       </div>
 
+      {locationError && (
+        <div className="mb-6 p-4 bg-yellow-50 rounded-lg">
+          <p className="text-yellow-700 mb-2">
+            <strong>Location access needed:</strong> {locationError}
+          </p>
+          <button 
+            onClick={requestLocationPermission}
+            className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors"
+          >
+            Share My Location
+          </button>
+        </div>
+      )}
+
+      {locationLoading && !locationError && (
+        <div className="mb-6 p-4 bg-blue-50 rounded-lg flex items-center">
+          <div className="animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-blue-600 mr-3"></div>
+          <p className="text-blue-700">Detecting your location to find nearby restaurants...</p>
+        </div>
+      )}
+
+      {userLocation && (
+        <div className="mb-6 p-4 bg-green-50 rounded-lg">
+          <div className="flex items-center text-green-700">
+            <MapPin className="w-5 h-5 mr-2" />
+            <p>Using your current location to find the best nearby restaurants</p>
+          </div>
+        </div>
+      )}
+
       <div className="mb-6 p-4 bg-gray-50 rounded-lg min-h-16">
         <p className="text-gray-700">{transcript || "Try saying: 'What are the top items from Bella Italia?'"}</p>
       </div>
@@ -172,7 +222,11 @@ const VoiceAssistant: React.FC = () => {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {suggestions.map((item, index) => (
-              <div key={item.id} className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <Link 
+                key={item.id} 
+                to={`/item/${selectedRestaurant?.id}/${item.id}`}
+                className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+              >
                 <div className="h-48 overflow-hidden">
                   <img 
                     src={item.image} 
@@ -196,7 +250,7 @@ const VoiceAssistant: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
