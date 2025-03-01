@@ -19,4 +19,4 @@ async function extractDishName(text) {
 }
 
 
-extractDishName("I want to eat litti choka");
+extractDishName("kal maine litti chokha kha ya tha ");
