@@ -20,7 +20,7 @@ Deligo is a **voice assistant** that suggests the **top 5 menu items** from near
 
 - **Frontend**: React.js, Tailwind CSS
 - **Backend**: Node.js, Express.js
-- **Database**: MongoDB (Mongoose)
+- **Database**: MongoDB (Mongoose), AWS
 - **AI**: Gemini AI
 - **Geolocation**: Google Maps API
 
@@ -140,4 +140,4 @@ Access the live application here:
 ## 🎥 Project Walkthrough Video
 
 Watch a detailed explanation of the entire project here:  
-**[Deligo - Project Walkthrough](https://your-video-link.com)**
+**[Deligo - Project Walkthrough](https://drive.google.com/drive/folders/1rxgWi1cI2Wo7EiDQwQJqV0oiDcO4XQa_?usp=sharing)**
