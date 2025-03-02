@@ -1,4 +1,3 @@
-/* Fullscreen Video Background */
 .video-container {
   display: flex;
   align-items: center;
@@ -18,7 +17,6 @@ video {
   object-fit: cover;
 }
 
-/* Centering the content */
 body,
 html {
   margin: 0;
@@ -31,7 +29,6 @@ html {
   align-items: center;
 }
 
-/* Centered content with semi-transparent background */
 .container {
   position: relative;
   display: flex;
@@ -44,12 +41,11 @@ html {
   border-radius: 10px;
   color: white;
   width: 100%;
-  /* max-width: 400px; */
-  left: -30px;
+  max-width: 400px;
+  left: -15px;
   z-index: 2;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .container {
     width: 95%;
@@ -68,7 +64,6 @@ html {
   gap: 10px;
   grid-template-columns: repeat(2, 1fr);
 }
-/* CSS */
 .button-86 {
   all: unset;
   width: 100px;
@@ -134,4 +129,67 @@ html {
 .button-86:active::after {
   transition: 0s;
   transform: translate(0, 5%);
+}
+.restaurant-details p {
+  font-size: 16px;
+  margin: 5px 0;
+  color: #ccc;
+}
+
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.menu-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+}
+
+.menu-item h4 {
+  font-size: 20px;
+  color: #f0f0f0;
+}
+
+.menu-item p {
+  font-size: 14px;
+  color: #ddd;
+  margin: 4px 0;
+}
+
+.menu-item span {
+  font-size: 14px;
+  font-weight: bold;
+}
+.restaurant-details {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 10px;
+  color: white;
+  width: 100vh;
+  z-index: 2;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.restaurant-details h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #f0f0f0;
 }
