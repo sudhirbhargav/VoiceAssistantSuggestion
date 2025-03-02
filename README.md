@@ -9,11 +9,11 @@ Deligo is a **voice assistant** that suggests the **top 5 menu items** from near
 - **Geolocation**: Google Maps API (for finding nearby restaurants)
 
 ## 🎯 Features
-✅ Voice-Powered Search: Users can interact with Deligo using voice commands to find the best food options.
-✅ Top 5 Recommendations: The app provides the top 5 food items from nearby restaurants. 
-✅ Real-time Suggestions: Data is fetched dynamically based on user location.
-✅ User-Friendly Interface: Simple and intuitive design for seamless user experience.
-✅ Scalable and efficient API with Express.js  
+- ✅ Voice-Powered Search: Users can interact with Deligo using voice commands to find the best food options.
+- ✅ Top 5 Recommendations: The app provides the top 5 food items from nearby restaurants. 
+- ✅ Real-time Suggestions: Data is fetched dynamically based on user location.
+- ✅ User-Friendly Interface: Simple and intuitive design for seamless user experience.
+- ✅ Scalable and efficient API with Express.js  
 
 ## 🛠️ Tech Stack
 - **Frontend**: React.js, Tailwind CSS
@@ -116,4 +116,8 @@ Access the live application here: [Deligo - Voice Assistant for Restaurant Recom
 ## Project Walkthrough Video
 
 Watch a detailed explanation of the entire project here: [Deligo - Voice Assistant for Restaurant Recommendations Walkthrough]()
+
+---
+
+**Contributions are welcome!** Feel free to fork the repository and submit a pull request.
 
