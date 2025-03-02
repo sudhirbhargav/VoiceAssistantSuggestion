@@ -68,6 +68,12 @@ const Homepage = () => {
   const speakText = (text) => {
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = "en-IN";
+    utterance.pitch = 1.2;
+    utterance.rate = 1.0;
+    const voices = speechSynthesis.getVoices();
+    utterance.voice = voices.find((voice) =>
+      voice.name.includes("Google UK English Female")
+    );
     speechSynthesis.speak(utterance);
   };
 
