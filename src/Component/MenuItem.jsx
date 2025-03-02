@@ -1,6 +1,12 @@
-const MenuItem = ({ item }) => {
+const MenuItem = ({ item, restaurant }) => {
   return (
     <div className="menu-item">
+      {/* Restaurant Details */}
+      <h2>{restaurant.name}</h2>
+      <p>Rating: ⭐ {restaurant.rating}</p>
+      <p>Contact: {restaurant.contact}</p>
+
+      {/* Menu Item Details */}
       <h4>{item.name}</h4>
       <p>{item.description}</p>
       <p>Price: ₹{item.price}</p>

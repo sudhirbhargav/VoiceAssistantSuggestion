@@ -1,29 +1,42 @@
 import "../App.css";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { RestaurantContext } from "../Component/RestaurantContext";
 import MenuItem from "./MenuItem";
+import Modal from "./Modal";
 
 const RestaurantDetails = () => {
   const { restaurantData } = useContext(RestaurantContext);
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const handleOpenModal = (item) => {
+    setSelectedItem(item);
+  };
   console.info("-------------------------------");
   console.info("restaurantData => ", restaurantData);
   console.info("-------------------------------");
-  if (!restaurantData) return <p>No restaurant data available.</p>;
-  const { restaurant, loaction, items } = restaurantData;
-
+  const handleCloseModal = () => {
+    setSelectedItem(null);
+  };
   return (
     <div className="restaurant-details">
-      <h2>{restaurant}</h2>
-      <p>
-        Location: Latitude {loaction[1]}, Longitude {loaction[0]}
-      </p>
+      {restaurantData.map(
+        (restaurant) =>
+          restaurant.top_menu_item && (
+            <div
+              key={restaurant._id}
+              onClick={() =>
+                handleOpenModal({ ...restaurant.top_menu_item, restaurant })
+              }
+            >
+              <MenuItem
+                item={restaurant.top_menu_item}
+                restaurant={restaurant}
+              />
+            </div>
+          )
+      )}
 
-      <h3>Menu Items</h3>
-      <div className="menu-items">
-        {items.map((item) => (
-          <MenuItem key={item._id} item={item} />
-        ))}
-      </div>
+      {selectedItem && <Modal item={selectedItem} onClose={handleCloseModal} />}
     </div>
   );
 };
