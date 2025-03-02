@@ -1,104 +1,117 @@
-# 🍽️ Deligo - Voice Assistant for Restaurant Recommendations
-
 ## 🚀 Project Overview
+
 Deligo is a **voice assistant** that suggests the **top 5 menu items** from nearby restaurants based on user location. It is built using:
-- **Frontend**: React.js
+
+- **Frontend**: React.js & Tailwind CSS
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB (Mongoose)
 - **AI**: Gemini AI (for NLP and intelligent suggestions)
 - **Geolocation**: Google Maps API (for finding nearby restaurants)
 
 ## 🎯 Features
-✅ Voice-based interaction using Gemini AI  
-✅ Find **nearby restaurants** based on latitude & longitude  
-✅ Suggest **top-rated menu items** from nearby restaurants  
-✅ Fetch data dynamically from MongoDB  
-✅ Scalable and efficient API with Express.js  
+
+- ✅ **Voice-Powered Search**: Users can interact with Deligo using voice commands to find the best food options.
+- ✅ **Top 5 Recommendations**: The app provides the top 5 food items from nearby restaurants.
+- ✅ **Real-time Suggestions**: Data is fetched dynamically based on user location.
+- ✅ **User-Friendly Interface**: Simple and intuitive design for seamless user experience.
+- ✅ **Scalable and Efficient API**: Uses Express.js for smooth backend performance.
 
 ## 🛠️ Tech Stack
-- **Frontend**: React.js, Tailwind CSS
-- **Backend**: Node.js, Express.js
-- **Database**: MongoDB (Mongoose)
-- **AI Integration**: Gemini AI API
-- **Geolocation API**: Google Maps API
-- **Authentication**: JWT (if required)
 
-## 📂 Folder Structure
-```
-deligo/
-│-- frontend/              # React.js frontend
-│-- backend/               # Node.js & Express backend
-│   │-- models/            # Mongoose models (Restaurant, MenuItem)
-│   │-- routes/            # API routes
-│   │-- controllers/       # Business logic
-│   │-- config/            # Configuration files
-│   │-- .gitignore         # Git ignore files
-│   │-- .env               # Environment variables
-│   │-- server.js          # Entry point
-│-- README.md              # Project documentation
-```
+- **Frontend**: React.js, Tailwind CSS
+  @@ -39,44 +39,44 @@ deligo/
 
 ## 🏗️ Installation & Setup
+
 ### 🔹 Backend Setup
-1️⃣ Clone the repository
+
+1️⃣ Clone the repository:
+
 ```bash
 git clone https://github.com/sudhirbhargav/VoiceAssistantSuggestion.git
 cd backend
 ```
-2️⃣ Install dependencies
+
+2️⃣ Install dependencies:
+
 ```bash
 npm install
 ```
-3️⃣ Set up environment variables (`.env` file)
+
+3️⃣ Set up environment variables (`.env` file):
+
 ```plaintext
 MONGO_URI=mongodb+srv://your-db-url
 GEMINI_API_KEY=your-gemini-api-key
 GOOGLE_MAPS_API_KEY=your-google-maps-key
 ```
-4️⃣ Start the server
+
+4️⃣ Start the server:
+
 ```bash
 npm start
 ```
 
 ### 🔹 Frontend Setup
-1️⃣ Navigate to frontend
+
+1️⃣ Navigate to frontend:
+
 ```bash
 cd frontend
 ```
-2️⃣ Install dependencies
+
+2️⃣ Install dependencies:
+
 ```bash
 npm install
 ```
-3️⃣ Start the React app
+
+3️⃣ Start the React app:
+
 ```bash
 npm start
 ```
 
 ## 🔥 API Endpoints
+
 ### **1️⃣ Get Top 5 Menu Items from Nearby Restaurants**
+
 ```http
-GET /api/menu/top?lat=<latitude>&lng=<longitude>
-```
-_Response:_
-```json
-{
-  "top_items": [
-    { "restaurant": "Indian Spice", "items": [...] },
-    { "restaurant": "Mumbai Tadka", "items": [...] }
-  ]
-}
+GET /restaurants/top-items?longitude=<longitude>&latitude=<latitude>
 ```
 
-## 📌 Future Enhancements
-- ✅ **Voice Command Execution** using Gemini AI
-- ✅ **User Authentication** (JWT-based login & favorites feature)
+_Response:_
+
+```json
+@@ -92,29 +92,33 @@ _Response:_
+- ✅ **Personalized Recommendations**: AI-based suggestions tailored to user preferences.
+- ✅ **Order Placement**: Allow users to place orders directly through the app.
+- ✅ **Multilingual Support**: Expanding voice assistant to support multiple languages.
+- ✅ **User Authentication**: JWT-based login & favorites feature.
 - ✅ **Dynamic Price & Discount Suggestions**
 
-## 🤝 Contributors
-- **Deepanshi Garg** (Backend Lead)
-- **Nisarg Shah**
-- **Sudhir Bharghav**
+## 🤝 Team Members
+1. **Sudhir Bhargav**
+   📧 [Sudhirbhargav100@gmail.com](mailto:Sudhirbhargav100@gmail.com)
+   🔗 [GitHub](https://github.com/sudhirbhargav)
+2. **Nisarg Shah**
+   📧 [shahnisarg23@gmail.com](mailto:shahnisarg23@gmail.com)
+   🔗 [GitHub](https://github.com/nisargshah23)
+3. **Deepanshi Garg**
+   📧 [deepanshigarg1307@gmail.com](mailto:deepanshigarg1307@gmail.com)
+   🔗 [GitHub](https://github.com/deepanshi-garg)
 
 ## ⭐ Support
 If you like this project, please ⭐ the repository!
 
+## 📜 License
+This project is open-source and available under the MIT License.
+
+---
+
+## 🌍 Deployed Link
+Access the live application here: **[Deligo - Voice Assistant for Restaurant Recommendations]("https://voice-assistant-suggestion.vercel.app/")**
+
+## 🎥 Project Walkthrough Video
+Watch a detailed explanation of the entire project here: **[Deligo - Project Walkthrough]()**
+```
