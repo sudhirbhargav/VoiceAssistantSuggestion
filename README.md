@@ -19,9 +19,12 @@ Deligo is a **voice assistant** that suggests the **top 5 menu items** from near
 ## 🛠️ Tech Stack
 
 - **Frontend**: React.js, Tailwind CSS
-  @@ -39,44 +39,44 @@ deligo/
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB (Mongoose)
+- **AI**: Gemini AI
+- **Geolocation**: Google Maps API
 
-## 🏗️ Installation & Setup
+## 🏷️ Installation & Setup
 
 ### 🔹 Backend Setup
 
@@ -83,7 +86,25 @@ GET /restaurants/top-items?longitude=<longitude>&latitude=<latitude>
 _Response:_
 
 ```json
-@@ -92,29 +92,33 @@ _Response:_
+{
+  "success": true,
+  "data": [
+    {
+      "restaurant": "Pizza Palace",
+      "item": "Pepperoni Pizza",
+      "rating": 4.8
+    },
+    {
+      "restaurant": "Sushi World",
+      "item": "Salmon Roll",
+      "rating": 4.7
+    }
+  ]
+}
+```
+
+## 🌟 Upcoming Features
+
 - ✅ **Personalized Recommendations**: AI-based suggestions tailored to user preferences.
 - ✅ **Order Placement**: Allow users to place orders directly through the app.
 - ✅ **Multilingual Support**: Expanding voice assistant to support multiple languages.
@@ -91,27 +112,32 @@ _Response:_
 - ✅ **Dynamic Price & Discount Suggestions**
 
 ## 🤝 Team Members
-1. **Sudhir Bhargav**
-   📧 [Sudhirbhargav100@gmail.com](mailto:Sudhirbhargav100@gmail.com)
-   🔗 [GitHub](https://github.com/sudhirbhargav)
-2. **Nisarg Shah**
-   📧 [shahnisarg23@gmail.com](mailto:shahnisarg23@gmail.com)
-   🔗 [GitHub](https://github.com/nisargshah23)
-3. **Deepanshi Garg**
-   📧 [deepanshigarg1307@gmail.com](mailto:deepanshigarg1307@gmail.com)
-   🔗 [GitHub](https://github.com/deepanshi-garg)
 
-## ⭐ Support
+1. **Sudhir Bhargav**  
+   💎 [GitHub](https://github.com/sudhirbhargav) | 📧 [Email](mailto:Sudhirbhargav100@gmail.com)
+
+2. **Nisarg Shah**  
+   💎 [GitHub](https://github.com/nisargshah23) | 📧 [Email](mailto:shahnisarg23@gmail.com)
+
+3. **Deepanshi Garg**  
+   💎 [GitHub](https://github.com/deepanshi-garg) | 📧 [Email](mailto:deepanshigarg1307@gmail.com)
+
+## ✨ Support
+
 If you like this project, please ⭐ the repository!
 
-## 📜 License
+## 🐝 License
+
 This project is open-source and available under the MIT License.
 
 ---
 
 ## 🌍 Deployed Link
-Access the live application here: **[Deligo - Voice Assistant for Restaurant Recommendations]("https://voice-assistant-suggestion.vercel.app/")**
+
+Access the live application here:  
+**[Deligo - Voice Assistant for Restaurant Recommendations](https://voice-assistant-suggestion.vercel.app/)**
 
 ## 🎥 Project Walkthrough Video
-Watch a detailed explanation of the entire project here: **[Deligo - Project Walkthrough]()**
-```
+
+Watch a detailed explanation of the entire project here:  
+**[Deligo - Project Walkthrough](https://your-video-link.com)**
