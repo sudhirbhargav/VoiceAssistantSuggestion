@@ -79,7 +79,7 @@ const Homepage = () => {
 
   return (
     <div className="container">
-      <h2>Voice Assistant to suggest you some dishes</h2>
+      <h2>Deligo - Voice Assistant for Restaurant Recommendations</h2>
       <p>
         {step === 1
           ? "What is your name?"
